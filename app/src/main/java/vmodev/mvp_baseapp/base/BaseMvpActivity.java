@@ -1,5 +1,6 @@
 package vmodev.mvp_baseapp.base;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,9 +9,9 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
 import vmodev.base.mvpbase.MvpViewActivity;
 import vmodev.mvp_baseapp.R;
 import vmodev.mvp_baseapp.commom.MyApplication;
@@ -24,7 +25,7 @@ public abstract class BaseMvpActivity extends AppCompatActivity implements MvpVi
     private View mRootView;
     protected boolean mIsStartAnimationFragment;
     protected boolean mIsClearMemoryActivity = false;
-    protected SweetAlertDialog mProgress;
+    private ProgressDialog mProgress;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -115,19 +116,23 @@ public abstract class BaseMvpActivity extends AppCompatActivity implements MvpVi
     @Override
     public void hideProgress() {
         if (mProgress != null) {
-            mProgress.dismissWithAnimation();
+            mProgress.cancel();
         }
     }
 
 
     @Override
     public void showProgress() {
-        mProgress = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
-        mProgress.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-        mProgress.setTitleText(getString(R.string.loading));
-        mProgress.setCancelable(false);
-        mProgress.show();
+        if (mProgress != null) {
+            mProgress.show();
+        } else {
+            mProgress = new ProgressDialog(this);
+            mProgress.setTitle(null);
+            mProgress.setMessage(getString(R.string.loading));
+            mProgress.show();
+        }
     }
+
 
     @Override
     public void showMessage(String message) {
