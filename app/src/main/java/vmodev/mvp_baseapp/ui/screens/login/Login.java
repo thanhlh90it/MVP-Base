@@ -2,6 +2,7 @@ package vmodev.mvp_baseapp.ui.screens.login;
 
 import rx.functions.Action1;
 import vmodev.base.mvpbase.MvpView;
+import vmodev.base.repository.enity.Profile;
 
 /**
  * Created by thanhle on 3/21/17.
@@ -10,8 +11,8 @@ import vmodev.base.mvpbase.MvpView;
 public interface Login {
     interface View extends MvpView {
         void gotoHome();
-        //void loginSuccess(Profile.ProfileBean profileBean);
-        void loginSuccess();
+        void loginSuccess(Profile.ProfileBean profileBean);
+//        void loginSuccess();
         void loadError(String message);
     }
     interface Presenter {

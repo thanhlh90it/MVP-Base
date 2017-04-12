@@ -13,6 +13,7 @@ import android.view.animation.Animation;
 import java.util.List;
 
 import vmodev.base.mvpbase.MvpViewFragment;
+import vmodev.mvp_baseapp.commom.MyApplication;
 import vmodev.mvp_baseapp.ui.animation.AnimationSwitchScreen;
 
 

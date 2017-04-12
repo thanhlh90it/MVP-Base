@@ -10,6 +10,7 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import vmodev.base.repository.IRemoteDataSource;
+import vmodev.base.repository.enity.Profile;
 
 
 /**
@@ -21,5 +22,12 @@ public class RemoteDataSource implements IRemoteDataSource {
 
     public RemoteDataSource (ApiService apiService) {
         mService = apiService;
+    }
+
+
+    public Observable<Profile> login(String email, String password) {
+        return mService.login("login",email, password)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 }

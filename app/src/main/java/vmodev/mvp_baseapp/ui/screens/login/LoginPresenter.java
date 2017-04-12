@@ -3,6 +3,7 @@ package vmodev.mvp_baseapp.ui.screens.login;
 import rx.functions.Action1;
 import vmodev.base.mvpbase.MvpRxPresenter;
 import vmodev.base.repository.DataRepository;
+import vmodev.base.repository.enity.Profile;
 import vmodev.base.utils.StringUtil;
 
 /**

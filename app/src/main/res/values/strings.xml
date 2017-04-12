@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">MVP-BaseApp</string>
     <string name="loading">Loading...</string>
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="btn_register">Regitser</string>
+    <string name="error_invalid_password">Password Invalid!</string>
+    <string name="error_field_required">Can not empty!</string>
 </resources>

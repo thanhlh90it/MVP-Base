@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import rx.functions.Action1;
 import vmodev.base.mvpbase.MvpPresenter;
+import vmodev.base.repository.enity.Profile;
 import vmodev.base.repository.local.SharePreferenceUtils;
 import vmodev.base.utils.StringUtil;
 import vmodev.mvp_baseapp.R;
@@ -37,7 +38,7 @@ public class LoginActivity extends BaseMvpActivity implements Login.View{
 
     private void openRegister() {
         Intent intent = new Intent();
-        intent.setClass(this, RegisterActivity.class);
+        //intent.setClass(this, RegisterActivity.class);
         startActivity(intent);
         finish();
     }

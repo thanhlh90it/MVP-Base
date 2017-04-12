@@ -9,12 +9,13 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Query;
 import rx.Observable;
+import vmodev.base.repository.enity.Profile;
 
 /**
  * Created by thanhle on 7/2/16.
  */
 public interface ApiService {
-//    @GET("api/")
-//    Observable<Profile> login(@Query("fu") String fu, @Query("email") String email, @Query("pass") String pass);
+    @GET("api/")
+    Observable<Profile> login(@Query("fu") String fu, @Query("email") String email, @Query("pass") String pass);
 
 }
