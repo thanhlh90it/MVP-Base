@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="duration_enter_animation_switch_screen">350</integer>
+    <integer name="duration_exit_animation_switch_screen">350</integer>
+    <integer name="duration_rotate">350</integer>
+</resources>
